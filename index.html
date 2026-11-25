@@ -16,7 +16,7 @@
 <script>
   (function(){
     var t=null,l=null;
-    try{t=localStorage.getItem('theme');l=localStorage.getItem('lang')}catch(e){}
+    try{t=localStorage.getItem('theme')}catch(e){}
     if(t!=='dark') t='light';
     var q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='ar')l=q;
     if(!l)l='ar';
@@ -176,7 +176,7 @@
   function save(k,v){try{localStorage.setItem(k,v)}catch(e){}}
   document.getElementById('langBtn').onclick=function(){
     var h=document.documentElement,l=h.lang==='ar'?'en':'ar';
-    h.lang=l;h.dir=l==='ar'?'rtl':'ltr';save('lang',l);render();
+    h.lang=l;h.dir=l==='ar'?'rtl':'ltr';render();
   };
   document.getElementById('themeBtn').onclick=function(){
     var h=document.documentElement,t=h.dataset.theme==='dark'?'light':'dark';
