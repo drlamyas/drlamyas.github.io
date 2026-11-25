@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dr. Lamya's Group | تعليمات المرضى · Patient Instructions</title>
 <meta name="description" content="Dr. Lamya's Group dental care instructions — before and after your treatment. تعليمات العناية بالأسنان قبل وبعد العلاج.">
-<meta name="theme-color" content="#FAFAFB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FAFAFB">
 <meta property="og:title" content="Dr. Lamya's Group — Patient Instructions">
 <meta property="og:description" content="تعليمات العناية بالأسنان قبل وبعد العلاج · Dental care instructions">
 <meta property="og:image" content="https://drlamyas.github.io/logo.png">
@@ -18,7 +17,7 @@
   (function(){
     var t=null,l=null;
     try{t=localStorage.getItem('theme');l=localStorage.getItem('lang')}catch(e){}
-    if(!t) t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    if(t!=='dark') t='light';
     var q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='ar')l=q;
     if(!l)l='ar';
     var h=document.documentElement;h.dataset.theme=t;h.lang=l;h.dir=l==='ar'?'rtl':'ltr';
